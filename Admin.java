@@ -1042,8 +1042,9 @@ public class Admin {
                     sum += g;
                 ave = sum / allGrades.size();
             }
+            float numericalave = convertAve(ave);
 
-            String remarks = (ave > 74) ? "PASSED" : "FAILED";
+            String remarks = (numericalave < 3.00) ? "PASSED" : "FAILED";
 
             System.out.printf("%s | %s | %s | %s | %s | %s | %.2f | %s%n",
                     p[0],
@@ -1052,7 +1053,7 @@ public class Admin {
                     p.length > 16 ? p[16] : "N/A",
                     p.length > 20 ? p[20] : "N/A",
                     p[1],
-                    ave,
+                    numericalave,
                     remarks);
         }
 
@@ -1107,6 +1108,44 @@ public class Admin {
             default:
                 System.out.println("Invalid choice.");
         }
+    }
+
+    public static Float convertAve(Float ave) {
+        Float newAve = null;
+        if (ave >= 97.0) {
+            newAve = (float) 1.00;
+        }
+        if (ave >= 94 && ave <= 96) {
+            newAve = (float) 1.25;
+        }
+        if (ave >= 91 && ave <= 93) {
+            newAve = (float) 1.50;
+        }
+        if (ave >= 88 && ave <= 90) {
+            newAve = (float) 1.75;
+        }
+        if (ave >= 88 && ave <= 90) {
+            newAve = (float) 1.75;
+        }
+        if (ave >= 85 && ave <= 87) {
+            newAve = (float) 2.00;
+        }
+        if (ave >= 82 && ave <= 84) {
+            newAve = (float) 2.25;
+        }
+        if (ave >= 79 && ave <= 81) {
+            newAve = (float) 2.50;
+        }
+        if (ave >= 76 && ave <= 78) {
+            newAve = (float) 2.75;
+        }
+        if (ave == 75) {
+            newAve = (float) 3.00;
+        }
+        if (ave < 75) {
+            newAve = (float) 5.00;
+        }
+        return newAve;
     }
 
     public static List<String[]> getStudentsForGUI(String sy, String section, String program) {
