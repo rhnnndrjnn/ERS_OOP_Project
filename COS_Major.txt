@@ -1,0 +1,14 @@
+Introduction to Computing
+Computer Programming 1
+Computer Programming 2
+Object-Oriented Programming
+Data Structures and Algorithms
+Fundamentals of Database Systems
+Human-Computer Interaction
+Operating Systems
+Computer Architecture and Organization
+Networks and Communications / Networking
+Web Systems and Technologies
+Information Assurance and Security
+Discrete Mathematics / Discrete Structures
+Social and Professional Issues in Computing
